@@ -5,16 +5,16 @@ steps:
   entrypoint: 'bash'
   args: [
    '-c', 
-   'docker pull gcr.io/$PROJECT_ID/rajudevops05/nodjs-app:latest || exit 0'
+   'docker pull gcr.io/$PROJECT_ID/nodjs-app:latest || exit 0'
   ]
 #step 2
 - name: gcr.io/cloud-builders/docker
   args: [
    'build', 
    '-t', 
-   'gcr.io/$PROJECT_ID/rajudevops05/nodjs-app:$BRANCH_NAME-$COMMIT_SHA',
+   'gcr.io/$PROJECT_ID/nodjs-app:$BRANCH_NAME-$COMMIT_SHA',
    '-t', 
-   'gcr.io/$PROJECT_ID/rajudevops05/nodjs-app:latest',
+   'gcr.io/$PROJECT_ID/nodjs-app:latest',
    '.'
   ]
 #step 3
@@ -29,14 +29,14 @@ steps:
    'set', 
    'image', 
    'deployment', 
-   'rajudevops05/nodjs-app', 
-   'rajudevops05/nodjs-app=gcr.io/$PROJECT_ID/rajudevops05/nodjs-app:$BRANCH_NAME-$COMMIT_SHA'
+   'nodjs-app', 
+   'nodjs-app=gcr.io/$PROJECT_ID/nodjs-app:$BRANCH_NAME-$COMMIT_SHA'
   ]
   env:
   - 'CLOUDSDK_COMPUTE_ZONE=us-central1-c'
   - 'CLOUDSDK_CONTAINER_CLUSTER=jenkin-cluster'
 # push images to Google Container Registry with tags
 images: [
-   'gcr.io/$PROJECT_ID/rajudevops05/nodjs-app:$BRANCH_NAME-$COMMIT_SHA',
-   'gcr.io/$PROJECT_ID/rajudevops05/nodjs-app:latest'
+   'gcr.io/$PROJECT_ID/nodjs-app:$BRANCH_NAME-$COMMIT_SHA',
+   'gcr.io/$PROJECT_ID/nodjs-app:latest'
   ]
