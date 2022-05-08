@@ -21,16 +21,16 @@ steps:
 - name: 'gcr.io/cloud-builders/kubectl'
   args: ['apply', '-f', 'k8s/']
   env:
-  - 'CLOUDSDK_COMPUTE_ZONE=<cluster-zone>'
-  - 'CLOUDSDK_CONTAINER_CLUSTER=<cluster-name>'
+  - 'CLOUDSDK_COMPUTE_ZONE=jenkin-cluster'
+  - 'CLOUDSDK_CONTAINER_CLUSTER=us-central1-c'
 #step 4
 - name: 'gcr.io/cloud-builders/kubectl'
   args: [
    'set', 
    'image', 
    'deployment', 
-   '<app-name>', 
-   '<app-name>=gcr.io/$PROJECT_ID/rajudevops05/nodjs-app:$BRANCH_NAME-$COMMIT_SHA'
+   'rajudevops05/nodjs-app', 
+   'rajudevops05/nodjs-app=gcr.io/$PROJECT_ID/rajudevops05/nodjs-app:$BRANCH_NAME-$COMMIT_SHA'
   ]
   env:
   - 'CLOUDSDK_COMPUTE_ZONE=us-central1-c'
