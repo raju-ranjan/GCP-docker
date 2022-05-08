@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    run: rajudevops05/nodjs-app
+  name: rajudevops05/nodjs-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      run: rajudevops05/nodjs-app
+  template:
+    metadata:
+      labels:
+        run: rajudevops05/nodjs-app
+    spec:
+      containers:
+      - image: gcr.io/steady-adapter-346414/<app-name>:latest
+        name: rajudevops05/nodjs-app
+        ports:
+        - containerPort: 8080
