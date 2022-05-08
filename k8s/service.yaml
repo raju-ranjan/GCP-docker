@@ -1,10 +1,10 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: rajudevops05/nodjs-app
+  name: nodjs-app
 spec:
   selector:
-     run: rajudevops05/nodjs-app
+     run: nodjs-app
   ports:
   - protocol: TCP
     port: 80
