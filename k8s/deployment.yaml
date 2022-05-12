@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   labels:
     run: nodjs-app
-  name: nodjs-app
+  name: nodjs-app1
 spec:
   replicas: 2
   selector:
