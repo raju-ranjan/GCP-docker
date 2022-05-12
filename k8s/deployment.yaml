@@ -36,7 +36,7 @@ spec:
         scaleTargetRef:
           apiVersion: apps/v1
           kind: Deployment
-          name: php-apache
+          name: nodjs-app
        minReplicas: 1
        maxReplicas: 5
        metrics:
