@@ -52,4 +52,10 @@ kind: HorizontalPodAutoscaler
         name: cpu
         target:
           type: Utilization
-          averageUtilization: 80  
+          averageUtilization: 80 
+     - type: Resource
+       resource:
+         name: memory
+         target:
+           type: AverageValue
+           averageValue: 30Mi
