@@ -9,4 +9,13 @@ You can find the article on medium called, [Dockerizing a Node.js Web App](https
 
 Also give us a follow at [Serverless Guru - Medium](https://medium.com/@serverlessguru)
 
+## By:  Raju Ranjan
+### Dated : 16/05/2022
+
+#--------------------------------------------------Cloud Build Details -------------------------------
+
+
+Cloud Build refrence (https://cloud.google.com/build/docs/deploying-builds/deploy-gke) 
+
+  (https://medium.com/platformer-blog/ci-cd-with-gke-and-google-cloud-build-98a797ecf346 )
 
